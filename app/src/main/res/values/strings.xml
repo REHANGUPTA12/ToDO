@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ToDo</string>
     <string name="title">Tasks</string>
+    <string name="dialogBoxTitle">Add your Task here </string>
 </resources>

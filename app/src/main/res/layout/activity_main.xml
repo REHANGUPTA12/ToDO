@@ -32,6 +32,7 @@
         android:layout_alignParentRight="true"
         android:layout_margin="20dp"
         android:backgroundTint="#39AF40"
+        android:id="@+id/addTaskBtn"
         android:src="@drawable/outline_add_24"
         />
 

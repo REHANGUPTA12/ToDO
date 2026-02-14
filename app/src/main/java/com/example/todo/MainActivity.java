@@ -1,7 +1,9 @@
 package com.example.todo;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,9 +13,12 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView taskRecycle;
+    FloatingActionButton addTaskBtn;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -28,7 +33,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         taskRecycle = findViewById(R.id.taskRecycler);
+        addTaskBtn = findViewById(R.id.addTaskBtn);
 
         taskRecycle.setLayoutManager(new LinearLayoutManager(this));
+
+        addTaskBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog addDialog = new Dialog(MainActivity.this);
+                addDialog.setContentView(R.layout.add_dialog);
+                addDialog.show();
+            }
+        });
     }
 }
